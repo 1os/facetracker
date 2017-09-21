@@ -33,8 +33,6 @@ parts:
       - -DOPENCV_EXTRA_MODULES_PATH=../../opencv-contrib-snap/src/modules      
     after: [opencv-contrib-snap]
     build-packages:
-      - cbuild-essential
-      - cmake
       - libjpeg-dev
       - libtiff5-dev
       - libjasper-dev
