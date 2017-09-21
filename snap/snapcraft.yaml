@@ -47,4 +47,4 @@ parts:
       - libx264-dev
       - libatlas-base-dev
     stage-packages:
-      gfortran
+      - gfortran
