@@ -14,21 +14,13 @@ parts:
   facetracker:
     plugin: maven
     after: [opencv-snap]    
-  opencv-make:
-    source: .
-    plugin: make      
-    after: [opencv-snap]
-    build: |
-      make -j4
-  opencv-contrib-snap:
-    source: https://github.com/opencv/opencv_contrib/archive/3.3.0.tar.gz
-    plugin: dump
   opencv-snap:
     plugin: cmake
     source: https://github.com/opencv/opencv/archive/3.3.0.tar.gz
     configflags: 
       - -DCMAKE_BUILD_TYPE=RELEASE
       - -DCMAKE_INSTALL_PREFIX=/usr
+      - -DBUILD_SHARED_LIBS=OFF
       - -DWITH_CUDA=OFF
       - -DOPENCV_EXTRA_MODULES_PATH=../../opencv-contrib-snap/src/modules      
     after: [opencv-contrib-snap]
@@ -46,3 +38,8 @@ parts:
       - libatlas-base-dev
     stage-packages:
       - gfortran
+      - ant
+      - default-jdk
+  opencv-contrib-snap:
+    source: https://github.com/opencv/opencv_contrib/archive/3.3.0.tar.gz
+    plugin: dump
