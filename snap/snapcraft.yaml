@@ -13,33 +13,33 @@ confinement: devmode # use 'strict' once you have the right plugs and slots
 parts:
   facetracker:
     plugin: maven
-    after: [opencv-snap]    
-  opencv-snap:
-    plugin: cmake
-    source: https://github.com/opencv/opencv/archive/3.3.0.tar.gz
-    configflags: 
-      - -DCMAKE_BUILD_TYPE=RELEASE
-      - -DCMAKE_INSTALL_PREFIX=/usr
-      - -DBUILD_SHARED_LIBS=OFF
-      - -DWITH_CUDA=OFF
-      - -DOPENCV_EXTRA_MODULES_PATH=../../opencv-contrib-snap/src/modules      
-    after: [opencv-contrib-snap]
-    build-packages:
-      - libjpeg-dev
-      - libtiff5-dev
-      - libjasper-dev
-      - libpng12-dev
-      - libavcodec-dev
-      - libavformat-dev
-      - libswscale-dev
-      - libv4l-dev
-      - libxvidcore-dev
-      - libx264-dev
-      - libatlas-base-dev
-    stage-packages:
-      - gfortran
-      - ant
-      - default-jdk
-  opencv-contrib-snap:
-    source: https://github.com/opencv/opencv_contrib/archive/3.3.0.tar.gz
-    plugin: dump
+#    after: [opencv-snap]    
+#  opencv-snap:
+#    plugin: cmake
+#    source: https://github.com/opencv/opencv/archive/3.3.0.tar.gz
+#    configflags: 
+#      - -DCMAKE_BUILD_TYPE=RELEASE
+#      - -DCMAKE_INSTALL_PREFIX=/usr
+#      - -DBUILD_SHARED_LIBS=OFF
+#      - -DWITH_CUDA=OFF
+#      - -DOPENCV_EXTRA_MODULES_PATH=../../opencv-contrib-snap/src/modules      
+#    after: [opencv-contrib-snap]
+#    build-packages:
+#      - libjpeg-dev
+#      - libtiff5-dev
+#      - libjasper-dev
+#      - libpng12-dev
+#      - libavcodec-dev
+#      - libavformat-dev
+#      - libswscale-dev
+#      - libv4l-dev
+#      - libxvidcore-dev
+#      - libx264-dev
+#      - libatlas-base-dev
+#    stage-packages:
+#      - gfortran
+#      - ant
+#      - default-jdk
+#  opencv-contrib-snap:
+#    source: https://github.com/opencv/opencv_contrib/archive/3.3.0.tar.gz
+#    plugin: dump
