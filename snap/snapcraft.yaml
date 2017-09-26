@@ -19,12 +19,13 @@ apps:
 parts:
   facetracker-jar:
     plugin: dump
-    source: ./bin/
+    source: /bin/
+#    source: https://bitbucket.org/firstopensystems/facetracker-jar/downloads/facetracker.zip
     after: [jdk-dump]
   jdk-dump:
     plugin: dump
-#    source: ../jdk-8u144-linux-arm64-vfp-hflt.tar.gz
-    source: https://bitbucket.org/firstopensystems/facetracker-jar/downloads/jdk-8u144-linux-arm64-vfp-hflt.tar.gz
+    source: /home/lazareveugene/NetBeansProjects/jdk-8u144-linux-arm64-vfp-hflt.tar.gz
+#    source: https://bitbucket.org/firstopensystems/facetracker-jar/downloads/jdk-8u144-linux-arm64-vfp-hflt.tar.gz
 #  opencv-snap:
 #    plugin: cmake
 #    source: https://github.com/opencv/opencv/archive/3.3.0.tar.gz
