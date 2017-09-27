@@ -21,8 +21,13 @@ parts:
     plugin: dump
 #    source: /bin/
     source: https://bitbucket.org/firstopensystems/facetracker-jar/downloads/facetracker.zip
+    build-packages:
+      - ca-certificates
+      - ca-certificates-java
     stage-packages:
       - default-jdk
+      - ca-certificates
+      - ca-certificates-java
 #  opencv-snap:
 #    plugin: cmake
 #    source: https://github.com/opencv/opencv/archive/3.3.0.tar.gz
