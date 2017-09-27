@@ -7,7 +7,7 @@ description: |
 
 grade: devel # must be 'stable' to release into candidate/stable channels
 confinement: devmode # use 'strict' once you have the right plugs and slots
-icon: ./icon.jpg
+icon: ./icon.png
 apps:
   facetracker:
     command: ./usr/lib/jvm/default-java/bin/java -jar ./facetracker.jar
