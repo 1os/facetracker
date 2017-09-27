@@ -10,7 +10,7 @@ confinement: devmode # use 'strict' once you have the right plugs and slots
 icon: ./icon.png
 apps:
   facetracker:
-    command: $SNAP/usr/lib/jvm/default-java/bin/java -jar $SNAP/facetracker.jar
+    command: ./usr/lib/jvm/default-java/bin/java -jar ./facetracker.jar
     environment:
       JAVA_HOME: $SNAP/usr/lib/jvm/default-java
     daemon: simple
