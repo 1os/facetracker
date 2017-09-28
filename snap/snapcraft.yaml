@@ -15,7 +15,7 @@ apps:
       JAVA_HOME: $SNAP/usr/lib/jvm/default-java
       PATH: $JAVA_HOME/jre/bin:$PATH
     daemon: simple
-    plugs: [network, network-bind]
+    plugs: [network, network-bind, camera, mount-observe]
 
 parts:
   facetracker-jar:
@@ -25,10 +25,15 @@ parts:
     build-packages:
       - ca-certificates
       - ca-certificates-java
+      - libjpeg-turbo8-dev
+      - libv4l-dev
     stage-packages:
       - default-jdk
       - ca-certificates
       - ca-certificates-java
+      - libjpeg-turbo8
+      - libv4l-0
+      - libv4lconvert0
 #    assets:
 #      plugin: dump
 #      source: /assets/
