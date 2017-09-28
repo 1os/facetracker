@@ -29,9 +29,9 @@ parts:
       - default-jdk
       - ca-certificates
       - ca-certificates-java
-    assets:
-      plugin: dump
-      source: /assets/
+#    assets:
+#      plugin: dump
+#      source: /assets/
 #  opencv-snap:
 #    plugin: cmake
 #    source: https://github.com/opencv/opencv/archive/3.3.0.tar.gz
