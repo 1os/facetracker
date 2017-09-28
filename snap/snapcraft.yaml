@@ -15,7 +15,15 @@ apps:
       JAVA_HOME: $SNAP/usr/lib/jvm/default-java
       PATH: $JAVA_HOME/jre/bin:$PATH
     daemon: simple
-    plugs: [network, network-bind, camera, mount-observe]
+    plugs:
+      - :network
+      - :network-observe
+      - :camera
+      - :mount-observe
+      - :framebuffer
+      - :hardware-observe
+      - :io-ports-control
+      - :raw-usb
 
 parts:
   facetracker-jar:
