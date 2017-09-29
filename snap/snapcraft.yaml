@@ -36,6 +36,7 @@ parts:
       - libjpeg-turbo8
       - libv4l-0
       - libv4lconvert0
+      - libbcprov-java
 #    assets:
 #      plugin: dump
 #      source: /assets/
