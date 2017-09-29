@@ -16,14 +16,8 @@ apps:
       PATH: $JAVA_HOME/jre/bin:$PATH
     daemon: simple
     plugs:
-      - :network
-      - :network-observe
-      - :camera
-      - :mount-observe
-      - :framebuffer
-      - :hardware-observe
-      - :io-ports-control
-      - :raw-usb
+      - network
+      - camera
 
 parts:
   facetracker-jar:
