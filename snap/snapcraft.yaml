@@ -10,7 +10,7 @@ confinement: devmode # use 'strict' once you have the right plugs and slots
 icon: ./icon.png
 apps:
   facetracker:
-    command: usr/lib/jvm/default-java/bin/java -jar $SNAP/facetracker.jar
+    command: usr/lib/jvm/default-java/bin/java -Djava.security.properties=$SNAP/java.security -jar $SNAP/facetracker.jar
     environment:
       JAVA_HOME: $SNAP/usr/lib/jvm/default-java
       PATH: $JAVA_HOME/jre/bin:$PATH
@@ -29,6 +29,7 @@ parts:
       - ca-certificates-java
       - libjpeg-turbo8-dev
       - libv4l-dev
+      - libbcprov-java
     stage-packages:
       - default-jdk
       - ca-certificates
@@ -37,13 +38,16 @@ parts:
       - libv4l-0
       - libv4lconvert0
       - libbcprov-java
-#    assets:
-#      plugin: dump
-#      source: /assets/
+    install: |
+      ln -s $SNAP/usr/share/java/bcprov.jar $SNAPCRAFT_PART_INSTALL/usr/lib/jvm/default-java/jre/lib/ext
+  assets:
+    plugin: dump
+    source: /assets/
 #  opencv-snap:
 #    plugin: cmake
 #    source: https://github.com/opencv/opencv/archive/3.3.0.tar.gz
-#    configflags:
+#    configflags::q
+
 #      - -DCMAKE_BUILD_TYPE=RELEASE
 #      - -DCMAKE_INSTALL_PREFIX=/usr
 #      - -DBUILD_SHARED_LIBS=OFF
